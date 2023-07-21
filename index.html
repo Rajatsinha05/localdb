@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      #btn {
+        background-color: aqua;
+      }
 
-        #btn{
-            background-color: aqua;
-        }
+      #ui {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      #ui div img {
+        width: 300px;
+      }
+      #btns{
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        background-color: rgb(205, 211, 211);
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <form>
-        <input type="url" id="img" placeholder="url">
-        <input type="text" id="title" placeholder="product name">
-        <input type="number" id="price" placeholder="price"> 
-        <input type="text" placeholder="category" id="category">
-        <input type="submit" value="Post" >
+      <input type="url" id="img" placeholder="url" />
+      <input type="text" id="title" placeholder="product name" />
+      <input type="number" id="price" placeholder="price" />
+      <input type="text" placeholder="category" id="category" />
+      <input type="submit" value="Post" />
     </form>
-    
-    <hr>
-    <div id="ui">
 
-        
+    <hr />
+    <div id="btns">
+      <button id="lth">Low to high</button>
+      <button id="htl">High to low</button>
+      <!-- <button id="men">men</button>
+      <button id="women">women</button>
+      <button id="kids">kids</button> -->
     </div>
-</body>
-<script src="./index.js"></script>
+
+    <div id="ui"></div>
+  </body>
+  <script src="./index.js"></script>
 </html>
