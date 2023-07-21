@@ -18,7 +18,7 @@
       #ui div img {
         width: 300px;
       }
-      #btns{
+      #btns {
         display: flex;
         justify-content: space-around;
         padding: 10px;
@@ -28,7 +28,7 @@
   </head>
 
   <body>
-    <form>
+    <form id="form">
       <input type="url" id="img" placeholder="url" />
       <input type="text" id="title" placeholder="product name" />
       <input type="number" id="price" placeholder="price" />
@@ -37,6 +37,10 @@
     </form>
 
     <hr />
+
+    <input type="text" id="value" />
+    <button id="search">search</button>
+
     <div id="btns">
       <button id="lth">Low to high</button>
       <button id="htl">High to low</button>

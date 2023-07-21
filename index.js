@@ -36,7 +36,7 @@ const productdata = (e) => {
 
 display(products);
 
-document.querySelector("form").addEventListener("submit", productdata);
+document.querySelector("#form").addEventListener("submit", productdata);
 
 // sorting by price
 const handellth = () => {
@@ -79,19 +79,39 @@ const handelcategory = (cat) => {
   display(temp);
 };
 
-let cat = ["men", "women", "kids" ,"girls"];
+let cat = ["men", "women", "kids", "girls"];
 
 for (let i = 0; i < cat.length; i++) {
   let btn = document.createElement("button");
   btn.innerHTML = cat[i];
-  btn.setAttribute("id",cat[i])
+  btn.setAttribute("id", cat[i]);
   document.getElementById("btns").append(btn);
 }
 
 for (let i = 0; i < cat.length; i++) {
-  document.getElementById(cat[i]).addEventListener("click", () => handelcategory(cat[i]));
+  document
+    .getElementById(cat[i])
+    .addEventListener("click", () => handelcategory(cat[i]));
 }
 
 // document.getElementById("men").addEventListener("click",()=>handelcategory("men"))
 // document.getElementById("women").addEventListener("click",()=>handelcategory("women"))
 // document.getElementById("kids").addEventListener("click",()=>handelcategory("kids"))
+
+// searching by name
+
+const search = () => {
+  let value = document.getElementById("value").value;
+  let temp = products.filter((item) => item.title.match(value.toLowerCase()));
+  console.log(temp);
+  display(temp);
+};
+
+
+document.getElementById("search").addEventListener("click", search);
+document.getElementById("value").addEventListener("keypress", (e) => {
+  console.log(e.key);
+  if (e.key == "Enter") {
+    search();
+  }
+});
